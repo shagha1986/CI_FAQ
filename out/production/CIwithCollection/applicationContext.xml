@@ -9,21 +9,42 @@
     <bean id="ans1" class="Answer">
         <constructor-arg value="1"></constructor-arg>
         <constructor-arg value="Java is a programming language"></constructor-arg>
-        <constructor-arg value="John"></constructor-arg>
+
     </bean>
     <bean id="ans2" class="Answer">
         <constructor-arg value="2"></constructor-arg>
         <constructor-arg value="Java is an insel in indonesien"></constructor-arg>
-        <constructor-arg value="Markus"></constructor-arg>
+
     </bean>
+    <bean id="ans3" class="Answer">
+        <constructor-arg value="3"></constructor-arg>
+        <constructor-arg value="Java is similar to C"></constructor-arg>
+
+    </bean>
+    <bean id="user1" class="User">
+        <constructor-arg type="int" value="1112"></constructor-arg>
+        <constructor-arg  value="Sheba"></constructor-arg>
+        <constructor-arg  value="Sheba43@web.de"></constructor-arg>
+    </bean>
+    <bean id="user2" class="User">
+        <constructor-arg type="int" value="1113"></constructor-arg>
+        <constructor-arg  value="kanu"></constructor-arg>
+        <constructor-arg  value="kanu23@web.de"></constructor-arg>
+    </bean>
+    <bean id="user3" class="User">
+        <constructor-arg type="int" value="1114"></constructor-arg>
+        <constructor-arg  value="Bob"></constructor-arg>
+        <constructor-arg  value="bob34@web.de"></constructor-arg>
+    </bean>
+
     <bean id="q" class="Question">
         <constructor-arg value="111"></constructor-arg>
         <constructor-arg value="What is java?"></constructor-arg>
         <constructor-arg>
             <map>
-                <entry key="Java is a Programming Language" value="karl"></entry>
-                <entry key="Java is an Island" value="sebastian"></entry>
-                <entry key="Java is a platform" value="sofia"></entry>
+                <entry key-ref="user1" value-ref="ans1"></entry>
+                <entry key-ref="user2" value-ref="ans2"></entry>
+                <entry key-ref="user3" value-ref="ans3"></entry>
             </map>
       <!--      <list>
                 <ref bean="ans1"/>

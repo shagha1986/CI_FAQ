@@ -6,7 +6,8 @@ import java.util.Set;
 public class Question {
     private int id;
     private String name;
-    private Map<String, String> answers;
+   private Map<User, Answer> answers;
+   // private Map<String, String> answers;
     //private List<String> answers;
     //private List<Answer> answers;
 
@@ -14,7 +15,7 @@ public class Question {
     }
 
     //public Question(int id, String name, List<Answer> answers) {
-    public Question(int id, String name, Map<String, String> answers) {
+    public Question(int id, String name, Map<User, Answer> answers) {
         super();
         this.id = id;
         this.name = name;
@@ -22,14 +23,14 @@ public class Question {
     }
 
     public void displayInfo() {
-        System.out.println(id + " " + name);
+        System.out.println("Question_id: "+ id + " Question-> " + name);
         System.out.println("answers are:");
         //Iterator<Answer> itr = answers.iterator();
-        Set<Map.Entry<String, String>> set = answers.entrySet();
-        Iterator<Map.Entry<String, String>> itr = set.iterator();
+        Set<Map.Entry<User, Answer>> set = answers.entrySet();
+        Iterator<Map.Entry<User, Answer>> itr = set.iterator();
         while (itr.hasNext()) {
-            Map.Entry<String, String> entry = itr.next();
-            System.out.println("Answer:" + entry.getKey() + " Posted By:" + entry.getValue());
+            Map.Entry<User, Answer> entry = itr.next();
+            System.out.println("User info: " + entry.getKey() + "\n Answer Info: -->" + entry.getValue());
             //System.out.println(itr.next());
         }
     }
